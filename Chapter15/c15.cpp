@@ -2,12 +2,68 @@
 #include <string>
 #include <exception>
 #include "sales.h"
-
-/* ------- ex 1 -------*/
+#include "exc_mean.h"
 
 using std::cout;
 using std::endl;
 using std::cin;
+
+/* ------- ex 3 -------*/
+
+#include <cmath>
+double hmean(double a, double b);
+double gmean(double a, double b);
+
+
+void ex3(void)
+{
+    double x, y, z;
+
+    cout << "Podaj dwie liczby : ";
+    while (cin >> x >> y)
+    {
+        try
+        {
+            z = hmean(x, y);
+            cout << "Srednia harmoniczna liczb " << x << " i " << y << " wynosi " << z << endl;
+            cout << "Srednia geometryczna liczb " << x << " i " << y << " wynosi " << gmean(x,y) << endl;
+            cout << "Podaj kolejna pare liczb <w,aby wyjsc> : ";
+        }
+        catch (bad_hmean & bg)
+        {
+            std::cout << bg.what();
+            cout << "Sprobuj ponownie..";
+            continue;
+        }
+        catch (bad_gmean& hg)
+        {
+            std::cout << hg.what();
+            cout << "Uzyte wartosci: " << x << ", " << y << endl;
+            cout << "Niestety, to koniec zabawy.";
+            break;
+        }
+    }
+    cout << "Koniec";
+    exit(0);
+}
+
+
+
+double hmean(double a, double b)
+{
+    if (a == -b)
+        throw bad_hmean();
+    return 2.0 * a * b / (a + b);
+}
+
+double gmean(double a, double b)
+{
+    if (a < 0 || b < 0)
+        throw bad_gmean();
+    return std::sqrt(a * b);
+}
+/* ------- ex 5 -------*/
+
 
 void ex5(void)
 {
@@ -83,11 +139,14 @@ void ex5(void)
 int main(void)
 {
     short ex;
-    std::cout << "Excersise(5) : ";
+    std::cout << "Excersise(3,5) : ";
     std::cin >> ex;
     std::cout << "\n";
     switch (ex)
     {
+    case 3 :
+        ex3();
+        break;
     case 5:
         ex5();
         break;
