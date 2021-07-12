@@ -7,7 +7,7 @@ using std::cout;
 using std::endl;
 using std::cin;
 
-void ex1(void)
+void ex5(void)
 {
     
     employee em("Tadeusz", "Hubert", "Sprzedawca");
@@ -40,13 +40,13 @@ void ex1(void)
 int main(void)
 {
     short ex;
-    std::cout << "Excersise(1) : ";
+    std::cout << "Excersise(5) : ";
     std::cin >> ex;
     std::cout << "\n";
     switch (ex)
     {
-    case 1:
-        ex1();
+    case 5:
+        ex5();
         break;
         //case 2: ex2(); break;
         //case 6: ex6(); break;
