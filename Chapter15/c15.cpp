@@ -8,14 +8,14 @@ using std::cout;
 using std::endl;
 using std::cin;
 
-/* ------- ex 3 -------*/
+/* ------- ex 2 -------*/
 
 #include <cmath>
 double hmean(double a, double b);
 double gmean(double a, double b);
 
 
-void ex3(void)
+void ex2(void)
 {
     double x, y, z;
 
@@ -62,10 +62,10 @@ double gmean(double a, double b)
         throw bad_gmean();
     return std::sqrt(a * b);
 }
-/* ------- ex 5 -------*/
+/* ------- ex 4 -------*/
 
 
-void ex5(void)
+void ex4(void)
 {
     using std::cin;
     using std::cout;
@@ -139,16 +139,16 @@ void ex5(void)
 int main(void)
 {
     short ex;
-    std::cout << "Excersise(3,5) : ";
+    std::cout << "Excersise(2,4) : ";
     std::cin >> ex;
     std::cout << "\n";
     switch (ex)
     {
     case 3 :
-        ex3();
+        ex2();
         break;
     case 5:
-        ex5();
+        ex4();
         break;
         //case 2: ex2(); break;
         //case 6: ex6(); break;
