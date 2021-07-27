@@ -8,7 +8,7 @@ int main(int argc, char **argv)
     
 
     short ex;
-    std::cout << "Excersise(1,2,3,4) : ";
+    std::cout << "Excersise(1,2,3) : ";
     std::cin >> ex;
     std::cout << "\n";
     switch (ex)
